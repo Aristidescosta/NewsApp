@@ -23,6 +23,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.loc.newsapp.presentation.onboarding.common.NewsButton
 import com.loc.newsapp.presentation.onboarding.common.NewsTextButton
 import com.loc.newsapp.presentation.onboarding.components.OnboardingPage
@@ -33,6 +34,7 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun OnboardingScreen(
+    event: (OnBoardingEvent) -> Unit,
     modifier: Modifier = Modifier
 ) {
     val pagerState = rememberPagerState(initialPage = 0) {
@@ -95,8 +97,8 @@ fun OnboardingScreen(
                     text = buttonState.value[1],
                     onClick = {
                         scope.launch {
-                            if(pagerState.currentPage == 3){
-                                // TODO - Implementar a funcionalidade de entrar no app
+                            if(pagerState.currentPage == 2){
+                                event(OnBoardingEvent.SaveAppEntry)
                             } else {
                                 pagerState.animateScrollToPage(page = pagerState.currentPage + 1)
                             }
@@ -116,7 +118,8 @@ fun OnboardingScreen(
 private fun OnboardingScreenPreview() {
     NewsAppTheme {
         Box(modifier = Modifier.background(MaterialTheme.colorScheme.background)){
-            OnboardingScreen()
+            val viewModel: OnboardingViewModel = hiltViewModel()
+            OnboardingScreen(event = viewModel::onEvent)
         }
     }
 }
