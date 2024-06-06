@@ -1,4 +1,4 @@
-package com.loc.newsapp.presentation.onboarding.common
+package com.loc.newsapp.presentation.common
 
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults

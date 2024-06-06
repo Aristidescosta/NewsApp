@@ -25,8 +25,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.loc.newsapp.presentation.onboarding.common.NewsButton
-import com.loc.newsapp.presentation.onboarding.common.NewsTextButton
+import com.loc.newsapp.presentation.common.NewsButton
+import com.loc.newsapp.presentation.common.NewsTextButton
 import com.loc.newsapp.presentation.onboarding.components.OnboardingPage
 import com.loc.newsapp.presentation.onboarding.components.PageIndicator
 import com.loc.newsapp.ui.theme.NewsAppTheme

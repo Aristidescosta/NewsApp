@@ -1,6 +1,8 @@
 package com.loc.newsapp.domain.model
 
+import com.google.gson.annotations.SerializedName
+
 data class TwitterMisc(
-    val Est. reading time: String,
-    val Written by: String
+    //@SerializedName("Written by") val writtenBy: String,
+    @SerializedName("Est. reading time") val estimatedReadingTime: String
 )

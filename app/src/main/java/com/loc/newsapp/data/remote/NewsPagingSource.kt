@@ -20,7 +20,7 @@ class NewsPagingSource(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, NewsResponseItem> {
         val page = params.key ?: 1
         return try {
-            val newsResponse = newsApi.getNews()
+            val newsResponse = newsApi.getNews(page)
             totalNewsCount += newsResponse.articles.size
             val articles = newsResponse.articles.distinctBy { it.content.rendered }
             LoadResult.Page(
