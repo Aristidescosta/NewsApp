@@ -1,6 +1,7 @@
 package com.loc.newsapp.presentation.onboarding
 
 import android.content.res.Configuration
+import android.util.Log
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -51,6 +52,7 @@ fun OnboardingScreen(
             }
         }
     }
+    Log.d("OnboardingScreen", "DÁ ERRO NÃO, POR FAVOR")
 
     Column(
         modifier = Modifier.fillMaxSize()
