@@ -26,8 +26,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.loc.newsapp.domain.model.Content
 import com.loc.newsapp.R
+import com.loc.newsapp.domain.model.Content
 import com.loc.newsapp.domain.model.Guid
 import com.loc.newsapp.domain.model.NewsResponseItem
 import com.loc.newsapp.domain.model.OgImage

@@ -1,5 +1,6 @@
 package com.loc.newsapp.data.remote
 
+import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.loc.newsapp.domain.model.Content
@@ -19,13 +20,14 @@ class NewsPagingSource(
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, NewsResponseItem> {
         val page = params.key ?: 1
+        Log.d("PAGE", page.toString())
         return try {
             val newsResponse = newsApi.getNews(page)
-            totalNewsCount += newsResponse.articles.size
-            val articles = newsResponse.articles.distinctBy { it.content.rendered }
+            totalNewsCount += newsResponse.size
+            val articles = newsResponse.distinctBy { it.content }
             LoadResult.Page(
                 data = articles,
-                nextKey = page + 1,
+                nextKey = null,
                 prevKey = null
             )
         } catch (e: Exception) {
