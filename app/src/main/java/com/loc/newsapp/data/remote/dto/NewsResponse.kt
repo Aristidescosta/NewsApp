@@ -1,7 +1,7 @@
 package com.loc.newsapp.data.remote.dto
 
-import com.loc.newsapp.domain.model.NewsResponseItem
+import com.loc.newsapp.domain.model.Article
 
 data class NewsResponse(
-    val articles: List<NewsResponseItem>
+    val articles: List<Article>
 )

@@ -5,14 +5,14 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.loc.newsapp.data.remote.NewsApi
 import com.loc.newsapp.data.remote.NewsPagingSource
-import com.loc.newsapp.domain.model.NewsResponseItem
+import com.loc.newsapp.domain.model.Article
 import com.loc.newsapp.domain.repository.NewsRepository
 import kotlinx.coroutines.flow.Flow
 
 class NewsRepositoryImpl(
     private val newsApi: NewsApi
 ) : NewsRepository {
-    override fun getNews(): Flow<PagingData<NewsResponseItem>> {
+    override fun getNews(): Flow<PagingData<Article>> {
         return Pager(
             config = PagingConfig(pageSize = 10),
             pagingSourceFactory = {
@@ -22,5 +22,4 @@ class NewsRepositoryImpl(
             }
         ).flow
     }
-
 }

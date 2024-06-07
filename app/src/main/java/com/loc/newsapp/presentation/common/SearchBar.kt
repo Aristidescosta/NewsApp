@@ -7,6 +7,8 @@ import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -57,7 +59,7 @@ fun SearchBar(
         TextField(
             value = text,
             onValueChange = onValueChange,
-            modifier = Modifier.fillMaxWidth().searchBarBorder(),
+            modifier = Modifier.fillMaxWidth().searchBarBorder().height(Dimens.PageIndicatorWidth),
             readOnly = readOnly,
             leadingIcon = {
                 Icon(
